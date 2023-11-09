@@ -36,10 +36,25 @@ myFunc(nums...)
 - defer statement defers the execution of a function until the surrounding function returns
 - can be put near cleanup / error handling code
 - can make functions with multiple returns look clean
-
-## Interfaces & Generics in Go
-### Type Embedding & Embedded Interfaces
-### Embedded Structs
+### Interfaces
+- interfaces are implicit in Go, and can be used to decouple things
+```
+type Abser interface {
+	Abs() float64
+}
+```
+### Generics
+- generics can take different types without sacrificing type safety
+- can be used to reduce duplicate code
+```
+func SumIntsOrFloats[K comparable, V int64 | float64](m map[K]V) V {
+    var s V
+    for _, v := range m {
+        s += v
+    }
+    return s
+}
+```
 
 ## Concurrency in Go
 ### Goroutines
