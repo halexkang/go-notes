@@ -58,5 +58,13 @@ func SumIntsOrFloats[K comparable, V int64 | float64](m map[K]V) V {
 
 ## Concurrency in Go
 ### Goroutines
+- easy lightweight way to start a concurrent thread in Go
 ### Channels
-### Synchronization
+- channels provide a way for two goroutines to communicate with one another and synchronize their execution
+- using a channel can synchronize two goroutines
+- `Do not communicate by sharing memory; instead, share memory by communicating.`
+- channels are synchronous, so buffered channels can be used to make it asynchronous
+
+Be careful of 
+- race conditions (two threads using same variable)
+- deadlock (one prevents the other from using resource)
