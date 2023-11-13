@@ -7,6 +7,7 @@ import (
 
 func main() {
   mux := http.NewServeMux() // localize servemux for security
+  // HandleFunc -> transforms function to a Handler function
   mux.HandleFunc("/", home) // catches all paths
   mux.HandleFunc("/param", param) // func1 exists in handlers.go
   mux.HandleFunc("/post", post) // func2 exists in handlers.go
